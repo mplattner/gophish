@@ -34,14 +34,9 @@ func (as *Server) SendTestEmail(w http.ResponseWriter, r *http.Request) {
 	// If a Template is not specified use a default
 	if s.Template.Name == "" {
 		//default message body
-		text := "It works!\n\nThis is an email letting you know that your gophish\nconfiguration was successful.\n" +
-			"Here are the details:\n\nWho you sent from: {{.From}}\n\nWho you sent to: \n" +
-			"{{if .FirstName}} First Name: {{.FirstName}}\n{{end}}" +
-			"{{if .LastName}} Last Name: {{.LastName}}\n{{end}}" +
-			"{{if .Position}} Position: {{.Position}}\n{{end}}" +
-			"\nNow go send some phish!"
+		text := "Hi {{.FirstName}} {{.LastName}},\n\nthis is just a test e-mail.\n\nBest,\nTom Riley"
 		t := models.Template{
-			Subject: "Default Email from Gophish",
+			Subject: "Test Mail",
 			Text:    text,
 		}
 		s.Template = t
