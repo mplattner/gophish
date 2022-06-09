@@ -2,6 +2,8 @@ module github.com/mplattner/gophish
 
 go 1.13
 
+replace github.com/gophish/gophish => github.com/mplattner/gophish master
+
 require (
 	bitbucket.org/liamstask/goose v0.0.0-20150115234039-8488cc47d90c
 	github.com/NYTimes/gziphandler v1.1.1
@@ -31,5 +33,3 @@ require (
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405
 )
-
-replace github.com/gophish/gophish => github.com/mplattner/gophish master
